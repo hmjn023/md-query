@@ -54,6 +54,10 @@ cli.command('extract', {
     path: z.string().describe('Heading path separated by > characters'),
     includeDescendants: z.boolean().optional().describe('Include descendant section blocks'),
   }),
+  alias: {
+    path: 'p',
+    includeDescendants: 'i',
+  },
   examples: [
     {
       args: { file: './docs/spec.md' },
@@ -100,6 +104,11 @@ cli.command('find', {
       .describe('Block type to match'),
     lang: z.string().optional().describe('Fence language to match when type is code'),
   }),
+  alias: {
+    keyword: 'k',
+    type: 't',
+    lang: 'l',
+  },
   examples: [
     {
       args: { file: './docs/spec.md' },
